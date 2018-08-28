@@ -1,0 +1,172 @@
+/*!
+Theme Name: Jarbas Vasconcelos
+Theme URI: http://underscores.me/
+Author: Vinícius Pereira
+Author URI: https://viniciusofp.com.br
+Description: Site da candidatura de Jarbas Vasconcelos (PV) ao senado pelo estado do Pará.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: jarbas
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Jarbas Vasconcelos is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Fonts
+# Variables and Mixins
+# Bootstrap
+# Global Elements
+# Navbar
+# Footer
+--------------------------------------------------------------*/
+
+// Fonts
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:300,500');
+$font-family-sans-serif: 'Open Sans', 'Helvetica', sans-serif;
+
+// Variables and Mixins
+
+$light-green: #55B294;
+$green: #3D9575;
+$orange: #EB601D;
+$blue: #27415A;
+$black: #444;
+$primary: $green;
+$light-gray: #F1F1F2;
+
+@mixin light-a($hover-color) {
+	color: #fff;
+	&:hover {
+		color: $hover-color;
+	}
+}
+
+@mixin absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+// Boostrap
+@import "bootstrap/bootstrap";
+ 
+// Global Elements
+@import "global-elements";
+
+// Navbar 
+@import "navbar";
+
+// Footer
+@import "footer";
+ 
+// Front Page
+@import "front-page";
+
+//Contato
+@import "contato";
+
+.page-biografia,
+.page-porque {
+	h1 {
+		color: $blue;
+		margin-bottom: 15px;
+	}
+	.biografia-content {
+		overflow: hidden;
+		transition: 2s;
+	}
+	.pq {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	.suplentes {
+		top: 30px;
+		h3 {
+			font-weight: 400;
+			margin-bottom: 20px;
+		}
+		background: $orange;
+		color: white;
+		padding: 20px;
+		border-radius: 5px;
+	}
+}
+
+.pagination {
+	text-align: center;
+	display: block;
+	margin-bottom: 15px;
+	font-family: 'Oswald';
+	a, span {
+		margin: 5px;
+		padding: 5px 12px;
+		border-radius: 5px;
+	}
+	span {
+		color: white;
+		background: $orange;
+	}
+	a {
+		&:hover {
+			background: $blue;
+			color: white;
+		}
+	}
+	.fa-angle-double-left {
+    margin-left: -3px;
+    margin-right: -2px;
+	}
+	.fa-angle-double-right {
+    margin-right: -3px;
+    margin-left: -2px;
+	}
+}
+
+.single-evento {
+	border-bottom: 2px solid $primary;
+}
+
+.propostas-pq {
+	padding-bottom: 30px;
+	padding-top: 30px;
+	background: #000;
+	background: $light-gray;
+	color: $blue;
+	.proposta-item {
+		padding: 30px;
+		background: #fff;
+		border-radius: 5px;
+		text-align: center;
+		box-shadow: 0 1px 4px rgba(0,0,0,.1);
+		margin-bottom: 30px;
+		h5 {
+			display: inline;
+			font-weight: 300;
+		}
+		p {
+			display: inline;
+		}
+	}
+}
+
+.porque-content {
+	h3 {
+		font-weight: 400;
+		color: $orange;
+		margin-top: 30px;
+		margin-bottom: 15px;
+	}
+}

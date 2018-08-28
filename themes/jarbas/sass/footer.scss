@@ -1,0 +1,23 @@
+.site-footer {
+	padding-top: 20px;
+	padding-bottom: 10px;
+	background: $blue;
+	color: #fff;
+	a {
+		@include light-a($orange);
+		font-family: 'Oswald', $font-family-sans-serif;
+		font-size: 14px;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+	ul {
+		text-align: center;
+		@extend .list-inline;
+		li {
+			@extend .list-inline-item;
+			&.current-menu-item a {
+				color: $orange;
+			}
+		}
+	}
+}

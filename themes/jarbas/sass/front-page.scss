@@ -1,0 +1,183 @@
+.hero {
+	position: relative;
+	.hero-item {
+		padding-bottom: 37.5%;
+		background-size: cover;
+	}
+	.hero-item-image {
+		a {
+			@include absolute-center;
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.hero-item-video {
+		background: $blue;
+		iframe {
+			@include absolute-center;
+			height: 100%;
+			width: 63.6667%;
+			padding: 15px;
+		}
+		.hero-video-capa {
+			@include absolute-center;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			z-index: 9;
+			i {
+				cursor: pointer;
+				font-size: 5rem;
+				color: white;
+				@include absolute-center;
+
+			}
+		}
+	}
+}
+.home-sobre {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background: $orange;
+	color: #fffd;
+	h1, h2 {
+		color: white;
+	}
+	.btn-light {
+		display: inline-block;
+	}
+	.home-sobre-cta {
+		h3 {
+			display: inline-block;
+			color: white;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.home-propostas {
+	padding-top: 60px;
+	padding-bottom: 80px;
+	background: $light-gray;
+	color: $blue;
+	a {
+		color: $blue;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.proposta-item {
+		padding: 30px;
+		background: #fff;
+		border-radius: 5px;
+		text-align: center;
+		box-shadow: 0 1px 4px rgba(0,0,0,.1);
+	}
+}
+.home-noticias {
+	padding-top: 60px;
+	padding-bottom: 30px;
+	background: #fff;
+	color: #252525;
+	h1 {
+		color: $orange;
+	}
+	a h3 {
+		color: $orange;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	a {
+		color: $blue;
+		&:hover {
+			color: $green;
+		}
+	}
+	.noticia-item {
+		.imagem {
+			position: relative;
+			width: 100%;
+			height: 200px;
+			overflow: hidden;
+			margin-bottom: 15px;
+			background-size: cover;
+			background-position: center;
+			img {
+				@include absolute-center;
+				width: 100%;
+				height: auto;
+				transition: .3s;
+				&:hover {
+					width: 105%;
+				}
+			}
+		}
+	}
+}
+.home-agenda {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background: #fff;
+	color: $black;
+	h1 {
+		color: $orange;
+	}
+	a h3 {
+		color: $orange;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	a {
+		color: $blue;
+		&:hover {
+			color: $green;
+		}
+	}
+	.agenda-item {
+		margin-bottom: 15px;
+		&.past {
+			opacity: .5;
+		}
+		.data {
+			color: $blue;
+			font-family: 'Oswald', $font-family-sans-serif;
+			font-weight: 600;
+			font-size: 38px;
+		}
+		.hora {
+			color: $orange;
+			font-family: 'Oswald', $font-family-sans-serif;
+			font-weight: 300;
+     	font-size: 28px;
+   	 	margin-top: -7px;
+		}
+	}
+}
+
+.newsletter {
+	background: $light-green;
+	color: white;
+	border-radius: 5px;
+	padding: 20px;
+	h2 {
+		text-transform: uppercase;
+		font-size: 1.5rem;
+		margin-bottom: 15px;
+	}
+	.wpcf7-submit {
+		@extend .btn;
+		@extend .btn-success;
+	}
+	.wpcf7-form-control:not(.wpcf7-submit) {
+		margin-bottom: 15px;
+    background: $green;
+    border: 1px solid darken($green, 5%);
+    color: white;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}

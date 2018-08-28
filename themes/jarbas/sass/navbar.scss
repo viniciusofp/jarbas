@@ -1,0 +1,26 @@
+.top-row {
+	background: $green;
+	ul {
+		padding: 5px 0px;
+		margin-bottom: 0;
+		text-align: left;
+		font-size: 14px;
+		a {
+			@include light-a($blue);
+		}
+	}
+}
+nav.navbar {
+	background: $light-green;
+	color: white;
+	.navbar-brand img {
+		height: 40px;
+	}
+	a {
+		font-family: 'Oswald';
+		font-weight: 500;
+		font-size: 14px;
+		color: white;
+		text-transform: uppercase;
+	}
+}
