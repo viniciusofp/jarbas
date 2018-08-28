@@ -34,7 +34,7 @@ get_header();
 		</div>
 	</div>
 </div>
-<div class="propostas-pq">
+<div id="propostas" class="propostas-pq">
 	<div class="container">
 		<div class="row justify-content-center text-center">
 			<div class="col-12 mb-3">

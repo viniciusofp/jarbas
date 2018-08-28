@@ -47,7 +47,7 @@ get_header();
 				<h1>Conheça as nossas propostas para defender os interesses do povo paraense no Senado Federal</h1>
 			</div>
 			<div class="col-md-4 align-self-end">
-				<a href="<?php echo home_url('/porque') ?>"><h3 class="text-md-right mt-3">Ver todas as propostas<i class="fas fa-arrow-right ml-2"></i></h3></a>
+				<a href="<?php echo home_url('/porque#propostas') ?>"><h3 class="text-md-right mt-3">Ver todas as propostas<i class="fas fa-arrow-right ml-2"></i></h3></a>
 			</div>
 		</div>
 		<div class="row mt-4">
