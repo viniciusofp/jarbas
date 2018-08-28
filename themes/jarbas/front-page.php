@@ -91,10 +91,10 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
-				<h1>Notícias</h1>
+				<h1>Blog</h1>
 			</div>
 			<div class="col-md-7 align-self-end">
-				<a href="<?php echo home_url('/noticias') ?>"><h3 class="text-md-right mt-3">Ver todas as notícias<i class="fas fa-arrow-right ml-2"></i></h3></a>
+				<a href="<?php echo home_url('/blog') ?>"><h3 class="text-md-right mt-3">Ver todos os posts<i class="fas fa-arrow-right ml-2"></i></h3></a>
 			</div>
 		</div>
 		<div class="row mt-4">
