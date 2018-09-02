@@ -19,14 +19,14 @@ get_header();
 <div class="page-biografia">
 	<div class="page-container container">
 		<div class="row">
-			<div class="col-12 col-md-8 mb-3">
+			<div class="col-12 col-lg-8 mb-3">
 				<h1><?php the_title() ?></h1>
 				<div class="biografia-content">
 					<?php the_content() ?>	
 				</div>
 				<button class="expand btn btn-orange mt-3">Expandir</button>
 			</div>
-			<div class="col-md-4">
+			<div class="col-lg-4">
 				<a href="">
 					<a href="<?php echo home_url('/porque') ?>"><h3 class="pq">Por que votar <strong>434</strong>?</h3></a>
 				</a>

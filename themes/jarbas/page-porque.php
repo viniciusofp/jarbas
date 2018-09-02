@@ -19,13 +19,13 @@ get_header();
 <div class="page-porque">
 	<div class="page-container container">
 		<div class="row">
-			<div class="col-12 col-md-8 mb-3">
+			<div class="col-12 col-lg-8 mb-3">
 				<h1><?php the_title() ?></h1>
 				<div class="porque-content">
 					<?php the_content() ?>	
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-lg-4">
 				<div class="suplentes sticky-top">
 					<p> <?php the_field('biografia_resumo') ?></p>
 					<a href="<?php echo home_url('/biografia') ?>"><button class="btn btn-light">Leia a biografia do candidato</button></a>

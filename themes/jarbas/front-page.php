@@ -179,7 +179,7 @@ get_header();
 			</div>
 
 			<div class="col-md-4">
-				<div class="newsletter">
+				<div class="newsletter mb-5">
 					<h2>Assine nossa newsletter</h2>
 					<?php echo do_shortcode('[contact-form-7 id="72" title="Inscrever na Newsletter"]') ?>
 				</div>
