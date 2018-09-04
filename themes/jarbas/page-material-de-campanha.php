@@ -31,9 +31,11 @@ get_header();
 					            <div class="midia col-12 col-md-4 col-lg-3">
 												<button class="preview btn btn-primary" data-id="media-<?php echo $image['ID'];?>">Visualizar</button>
 					            	<iframe id="media-<?php echo $image['ID'];?>" data-src="<?php echo $image['url'];  ?>" alt="" frameborder="0">
-					            		
 					            	</iframe>
-												<h6><?php echo $image['title'];  ?></h6>
+												<h6><?php echo $image['title'];?></h6>
+												<?php if ($image['caption']): ?>
+													<p><?php echo $image['caption'];?></p>
+												<?php endif ?>
 					              <a target="_blank" href="<?php echo $image['url']; ?>">
 					              	<button class="btn btn-orange btn-sm mr-2">DOWNLOAD</button>
 					              </a>
