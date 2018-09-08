@@ -83,8 +83,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark">
 		<div class="container">
 		 <a class="navbar-brand" href="<?php echo home_url() ?>">
-		 	<img srcset="<?php echo get_template_directory_uri(); ?>/img/brand.png 1x,
-		 	<?php echo get_template_directory_uri(); ?>/img/brand.png 2x" alt="">
+		 	<img src="<?php echo get_template_directory_uri(); ?>/img/brand.png" alt="">
 		 </a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-top-navbar-collapse-1" aria-controls="bs-top-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
