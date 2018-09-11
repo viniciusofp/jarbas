@@ -1,5 +1,5 @@
 
-<div id="home-hero-carousel" class="carousel slide hero" data-interval="false">
+<div id="home-hero-carousel" class="carousel slide hero" data-interval="3000" data-ride="carousel">
   <div class="carousel-inner"><?php
 $counter = 0;
 if( have_rows('slider') ): while ( have_rows('slider') ) : the_row(); $counter++;
@@ -13,19 +13,21 @@ if ($counter == 1) { $sliderClass = 'active'; } else { $sliderClass = ''; }
 		</div>
 	<?php elseif (get_row_layout() == 'slide_de_video'): ?>
 		<div class="carousel-item hero-item hero-item-video <?php echo $sliderClass; ?>">
-			<div id="hero-capa-<?php echo $count ?>" class="hero-video-capa" style="background-image: url('<?php the_sub_field('capa_do_video') ?>">
-				<i id="hero-play-<?php echo $count ?>" class="fas fa-play-circle"></i>
+			<div id="hero-capa-<?php echo $counter ?>" class="hero-video-capa" style="background-image: url('<?php the_sub_field('capa_do_video') ?>">
+				<i id="hero-play-<?php echo $counter ?>" class="fas fa-play-circle"></i>
 			</div>
-			<iframe id="hero-video-<?php echo $count ?>" src="<?php the_sub_field('video') ?>?rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+			<iframe id="hero-video-<?php echo $counter ?>" data-src="<?php the_sub_field('video') ?>?rel=0&modestbranding=1&autoplay=1" frameborder="0" allowfullscreen class="carousel-video"></iframe>
 		</div>
 		<script>
-		  $('#hero-play-<?php echo $count ?>').on('click', function(ev) {
- 
-		    $("#hero-video-<?php echo $count ?>")[0].src += "&autoplay=1";
+		  $('#hero-play-<?php echo $counter ?>').on('click', function(ev) {
+
+		    var videoUrl = $("#hero-video-<?php echo $counter ?>").attr('data-src');
+		    $("#hero-video-<?php echo $counter ?>").attr('src', videoUrl);
 		    ev.preventDefault();
-		    $("#hero-capa-<?php echo $count ?>").fadeOut();
-		 
+		    $("#hero-capa-<?php echo $counter ?>").fadeOut();
+		    $('.carousel').carousel('pause');
 		  });
+
 		</script>
 	<?php endif ?>
 <?php endwhile; endif; ?>
@@ -39,3 +41,13 @@ if ($counter == 1) { $sliderClass = 'active'; } else { $sliderClass = ''; }
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<script>
+	$( document ).ready(function() {
+		  $('.carousel').on('slide.bs.carousel', function () {
+			  $('.carousel-video').attr('src', '')
+			  $('.hero-video-capa').fadeIn();
+		    $('.carousel').carousel('cycle');
+			})
+	});
+</script>

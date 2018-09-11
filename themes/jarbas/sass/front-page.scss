@@ -12,12 +12,11 @@
 		}
 	}
 	.hero-item-video {
-		background: $blue;
+		background: #181818;
 		iframe {
 			@include absolute-center;
 			height: 100%;
 			width: 63.6667%;
-			padding: 15px;
 		}
 		.hero-video-capa {
 			@include absolute-center;
