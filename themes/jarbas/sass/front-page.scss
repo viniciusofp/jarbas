@@ -29,8 +29,14 @@
 				font-size: 5rem;
 				color: white;
 				@include absolute-center;
+				@media all and (max-width: 1199px) {
+					font-size: 4rem;
+				}
+				@media all and (max-width: 991px) {
+					font-size: 3rem;
+				}
 				@media all and (max-width: 767px) {
-					font-size: 1rem;
+					font-size: 2rem;
 				}
 			}
 		}
