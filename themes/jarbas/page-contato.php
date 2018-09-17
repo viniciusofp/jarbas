@@ -22,8 +22,6 @@ get_header();
 			<div class="col-12 col-md-10 col-lg-8 text-center mb-3">
 				<h1><?php the_title() ?></h1>
 				<?php the_content() ?>
-				<h4>Acompanhe nossas redes sociais</h4>
-				<?php get_template_part('template-parts/social-media') ?>		
 			</div>
 		</div>
 		<div class="row justify-content-center">
