@@ -131,53 +131,55 @@ get_header();
 <div class="home-agenda">
 	<div class="container">
 		<div class="row">
-
 			<div class="col-md-8">
-				<div class="row">
-					<div class="col-md-5">
-						<h1>Agenda</h1>
-					</div>
-					<div class="col-md-7 align-self-end">
-						<a href="<?php echo home_url('/agenda') ?>"><h3 class="text-md-right mt-3">Ver todos os eventos<i class="fas fa-arrow-right ml-2"></i></h3></a>
-					</div>
-				</div>
-				<div class="row mt-4">
-					<?php 
-					$agendaArgs = array(
-						'post_type' => 'eventos',
-						'posts_per_page' => -1,
-						'meta_key'			=> 'data',
-						'orderby'			=> 'meta_value',
-						'order'				=> 'ASC'
-					);
-					$agendaLoop = new WP_Query( $agendaArgs );
-					$agendaCount = 0;
-					if ($agendaLoop->have_posts()) :
-					while ( $agendaLoop->have_posts() ) : $agendaLoop->the_post();?>
-					
-					<?php 
+				<?php 
+				//Checa se há eventos futuros
+				$agendaArgs = array(
+					'post_type' => 'eventos',
+					'posts_per_page' => -1,
+					'meta_key'			=> 'data',
+					'orderby'			=> 'meta_value',
+					'order'				=> 'ASC'
+				);
+				$agendaLoop = new WP_Query( $agendaArgs );
+				$hasEvents = false;
+				if ($agendaLoop->have_posts()) : while ( $agendaLoop->have_posts() ) : $agendaLoop->the_post();
 					$dtime = DateTime::createFromFormat("d/m", get_field('data'));
 					$eventTime = $dtime->getTimestamp();
 					$now =  new DateTime('now');
-					if ($eventTime >= $now->getTimestamp() && $agendaCount < 4): ?>
-						<div class="col-6 col-md-3">
-							<a href="<?php the_permalink(); ?>">
-								<div class="agenda-item">
-									<?php if (get_field('data')): ?>
-										<div class="data"><?php the_field('data'); ?></div>
-									<?php endif ?>
-									<?php if (get_field('hora')): ?>
-										<div class="hora">ÀS <?php the_field('hora'); ?></div>
-									<?php endif ?>
-									<div class="evento"><?php the_title(); ?></div>
-								</div>
-							</a>
-						</div>
-					<?php $agendaCount++; endif ?>
-					<?php endwhile; wp_reset_query(); endif?>
-				</div>
-			</div>
+					if ($eventTime >= $now->getTimestamp()):
+						$hasEvents = true;
+					endif;
+				endwhile; wp_reset_query(); endif;
 
+				// Exibe a Agenda
+				if ($hasEvents) :
+					get_template_part( 'template-parts/home', 'agenda' );
+
+				// Exibe o 3o último post
+				else : 
+					$postArgs = array(
+						'post_type' => 'post',
+						'posts_per_page' => 1,
+						'offset' => 2
+					);
+					$postLoop = new WP_Query( $postArgs );
+					$noticiaCount = 0;
+					if ($postLoop->have_posts()) : while ( $postLoop->have_posts() ) : $postLoop->the_post(); ?>
+						<div class="home-noticias pt-0">
+							<div class="noticia-item">
+								<a href="<?php the_permalink() ?>">
+									<div class="imagem" style="background-image: url('<?php the_post_thumbnail_url() ?>');">
+									</div>
+									<h5><?php the_title() ?></h5>
+								</a>
+								<small><?php the_excerpt(); ?></small>
+							</div>
+						</div>
+					<?php endwhile; endif;
+				endif;?>
+			</div>
+			<!-- Newsletter -->
 			<div class="col-md-4">
 				<div class="newsletter mb-5">
 					<h2>Assine nossa newsletter</h2>

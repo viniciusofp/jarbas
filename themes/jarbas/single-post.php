@@ -21,10 +21,12 @@ $postID = get_the_ID();
 <div class="page-container container">
 	<div class="row">
 		<div class="post-content col-12 col-lg-8">
+			<?php $classSocial = ''; ?>
 			<?php if (has_post_thumbnail()):
 				the_post_thumbnail('full');
+			 $classSocial = 'nothumb';
 			endif ?>
-			<div class="social-share">
+			<div class="social-share <?php echo $classSocial ?>">
 				<ul>
 					<li><span><i class="fas fa-share"></i></span></li>
 					<li><a class="popup-share facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=<?php the_permalink() ?>"><i class="fab fa-facebook-f"></i></a></li>
@@ -32,6 +34,7 @@ $postID = get_the_ID();
 					<li><a class="popup-share google-plus" target="_blank" href="http://plus.google.com/share?url=<?php the_permalink() ?>"><i class="fab fa-google-plus-g"></i></a></li>
 					<li><a class="popup-share pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink() ?>&description=&media=<?php the_post_thumbnail_url() ?>"><i class="fab fa-pinterest-p"></i></a></li>
 					<li><a class="popup-share linkedin" target="_blank" href="http://linkedin.com/shareArticle?mini=true&url=<?php the_permalink() ?>&title=<?php the_title() ?>"><i class="fab fa-linkedin-in"></i></a></li>
+					<li><a href="whatsapp://send" data-text="<?php the_title(); ?>" data-href="<?php the_permalink(); ?>" class="whatsapp"><i class="fab fa-whatsapp"></i></a></li>
 				</ul>
 				<script>
 					$(document).ready(function() {
